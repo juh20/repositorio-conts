@@ -2,9 +2,22 @@
 
 @section('title', 'Lista de Contatos')
 
+@section('styles')
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+@endsection
+
 @section('content')
     <h1>Lista de Contatos</h1>
     <table>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Telefone</th>
         @foreach ($contacts as $contact)
             <tr>
                 <td>{{ $contact->name }}</td>
@@ -16,6 +29,7 @@
         @endforeach
     </table>
     <a href="/contacts/create">Registrar novo contato</a>
+    <a href="/authors/autores.blade.php">Sobre os autores</a>
 @endsection
 
 @section('scripts')
