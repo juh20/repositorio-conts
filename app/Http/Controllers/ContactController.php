@@ -14,7 +14,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contacts = Contact::all();
+        return view('inicio', compact('contacts'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.criarContato');
     }
 
     /**
@@ -35,7 +36,15 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validacao($request);
+
+        $obj = new Contact();
+        $obj->name = $request->input('name');
+        $obj->email = $request->input('email');
+        $obj->phone = $request->input('phone');
+        $obj->save();
+
+        return redirect('/contacts');
     }
 
     /**
@@ -46,7 +55,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('contacts.show', compact('contact'));
     }
 
     /**
@@ -57,7 +66,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('contacts.editaContato', compact('contact'));
     }
 
     /**
@@ -69,7 +78,14 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $this->validacao($request);
+
+        $contact->name = $request->input('name');
+        $contact->phone = $request->input('phone');
+        $contact->email = $request->input('email');
+
+        $contact->save();
+        return redirect('/contacts');
     }
 
     /**
@@ -80,6 +96,16 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+        return redirect('/contacts');
+    }
+
+    public function validacao(Request $request)
+    {
+        $request->validate([
+        'name' => 'required|max:100',
+        'email' => 'required|email',
+        'phone' => 'numeric'
+        ]);
     }
 }
