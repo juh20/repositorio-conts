@@ -19,13 +19,14 @@
                     <p class="alert alert-danger">>{{ $message }}</p>
                 @enderror
                 <label for="email">E-mail:</label>
-                <input class="form-control" type="text" id="email" name="email"><br>
+                <input class="form-control" type="text" id="email" name="email" >
                 @error('email')
                     <p class="alert alert-danger">>{{ $message }}</p>
                 @enderror
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Salvar</button>
+                <button class="btn btn-secondary" type="submit">Salvar</button>
+                <button class="btn btn-secondary" type="submit"><a href="/contacts" class="link">Cancelar</a></button>
             </div>
         </form>
     </div>

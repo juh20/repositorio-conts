@@ -33,8 +33,11 @@
             @endforeach
         </tbody>
     </table>
-    <a href="/contacts/create">Registrar novo contato</a>
-    <a href="/autores">Sobre os autores</a>
+    <div class="form-group">
+        <button class="btn btn-secondary"><a class="link" href="/contacts/create">Novo contato</a></button>
+        <button class="btn btn-secondary"><a class="link" href="/autores">Sobre os autores</a></button>
+    </div>
+    
 @endsection
 
 @section('scripts')

@@ -14,5 +14,5 @@
         <p>Professor: Fábio Agostinho Bóris.</p>
         <p>Curso de Análise e Desenvolvimento de Sistemas. 4º Semestre.</p>
     </div>
-
-@endsection
+    <button class="btn btn-secondary"><a href="/contacts" class="link">Voltar</a></button>
+    @endsection

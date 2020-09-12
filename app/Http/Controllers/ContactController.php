@@ -108,9 +108,4 @@ class ContactController extends Controller
         'phone' => 'numeric'
         ]);
     }
-
-    public function autores()
-    {
-        return view('authors\autores');
-    }
 }
