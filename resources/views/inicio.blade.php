@@ -28,7 +28,7 @@
                     <td>{{ $contact->email }}</td>
                     <td>{{ $contact->phone }}</td>
                     <td><a href="/contacts/{{ $contact->id }}/edit">Editar</a></td>
-                    <td><a href="/contacts/{{ $contact->id }}">Excluir</a></td>
+                    <td><a class="text-danger" href="/contacts/{{ $contact->id }}">Excluir</a></td>
                 </tr>
             @endforeach
         </tbody>
