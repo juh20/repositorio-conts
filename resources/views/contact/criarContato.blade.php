@@ -7,26 +7,26 @@
     <div>
         <form action="/contacts" method="POST">
             @csrf
-            <div>
+            <div class="form-group">
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name"><br>
+                <input class="form-control" type="text" id="name" name="name"><br>
+                @error('name')
+                    <p class="alert alert-danger">{{ $message }}</p>
+                @enderror
                 <label for="phone">Telefone:</label>
-                <input type="text" id="phone" name="phone"><br>
+                <input class="form-control" type="text" id="phone" name="phone"><br>
+                @error('phone')
+                    <p class="alert alert-danger">>{{ $message }}</p>
+                @enderror
                 <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email"><br>
+                <input class="form-control" type="text" id="email" name="email"><br>
+                @error('email')
+                    <p class="alert alert-danger">>{{ $message }}</p>
+                @enderror
             </div>
-            <div>
-                <button type="submit">Salvar</button>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Salvar</button>
             </div>
         </form>
-        <div>
-            @if ($errors->any())
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach)
-                </ul>
-            @endif
-        </div>
     </div>
 @endsection

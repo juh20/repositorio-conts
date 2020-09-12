@@ -14,19 +14,24 @@
 
 @section('content')
     <h1>Lista de Contatos</h1>
-    <table>
-        <th>Nome</th>
-        <th>E-mail</th>
-        <th>Telefone</th>
-        @foreach ($contacts as $contact)
-            <tr>
-                <td>{{ $contact->name }}</td>
-                <td>{{ $contact->email }}</td>
-                <td>{{ $contact->phone }}</td>
-                <td><a href="/contacts/{{ $contact->id }}/edit">Editar</a></td>
-                <td><a href="/contacts/{{ $contact->id }}">Excluir</a></td>
-            </tr>
-        @endforeach
+    <table class="table table-sm">
+        <thead class="thead-dark">
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Telefone</th>
+            <th colspan="3" scope="col">Opções</th>
+        </thead>
+        <tbody>
+            @foreach ($contacts as $contact)
+                <tr>
+                    <td>{{ $contact->name }}</td>
+                    <td>{{ $contact->email }}</td>
+                    <td>{{ $contact->phone }}</td>
+                    <td><a href="/contacts/{{ $contact->id }}/edit">Editar</a></td>
+                    <td><a href="/contacts/{{ $contact->id }}">Excluir</a></td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
     <a href="/contacts/create">Registrar novo contato</a>
     <a href="/autores">Sobre os autores</a>
