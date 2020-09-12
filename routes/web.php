@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ContactController@index');
 
-route::resource('contacts', 'ContactController');
+Route::view('/autores', 'authors\autores');
+
+Route::resource('contacts', 'ContactController');

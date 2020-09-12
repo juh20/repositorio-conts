@@ -29,7 +29,7 @@
         @endforeach
     </table>
     <a href="/contacts/create">Registrar novo contato</a>
-    <a href="/authors/autores.blade.php">Sobre os autores</a>
+    <a href="/autores">Sobre os autores</a>
 @endsection
 
 @section('scripts')

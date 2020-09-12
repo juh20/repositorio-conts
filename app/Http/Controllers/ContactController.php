@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('contacts.criarContato');
+        return view('contact\criarContato');
     }
 
     /**
@@ -55,7 +55,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        return view('contacts.show', compact('contact'));
+        return view('contact\show', compact('contact'));
     }
 
     /**
@@ -66,7 +66,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('contacts.editaContato', compact('contact'));
+        return view('contact\editaContato', compact('contact'));
     }
 
     /**
@@ -107,5 +107,10 @@ class ContactController extends Controller
         'email' => 'required|email',
         'phone' => 'numeric'
         ]);
+    }
+
+    public function autores()
+    {
+        return view('authors\autores');
     }
 }
